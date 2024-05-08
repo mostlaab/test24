@@ -1,0 +1,19 @@
+name: Build LaTeX Document
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Build LaTeX document
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: main.tex
